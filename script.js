@@ -15,8 +15,11 @@ function order(){
         bill.discount.value = 0;
         bill.total.value = totalPrice - eval(bill.discount.value);
     }
-    var change = bill.change.value;
-    bill.change.value = eval(bill.paid.value) - totalPrice;
+    
+    if (bill.paid.value >= totalPrice){
+        bill.change.value = eval(bill.paid.value) - totalPrice;
+    }
+    
 }
 
 function resetForm(){
